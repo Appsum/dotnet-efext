@@ -1,0 +1,10 @@
+{
+	"$schema": "../appsum.efext/efconfig.schema.json",
+	"contexts": [
+		{
+			"name": "TestDb",
+			"dbContext": "TestDb",
+			"project": "AppsumEfExt.Sample.csproj"
+		}
+	]
+}

@@ -1,0 +1,71 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://appsum.be/efconfig.schema.json",
+	"title": "EF Config",
+	"description": "Config used for the Appsum efext dotnet tool.",
+	"type": "object",
+	"properties": {
+		"contexts": {
+			"description": "List of contexts.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Name to describe the DbContext project. Used as context param if DbContext is not set."
+					},
+					"dbContext": {
+						"type": "string",
+						"description": "Name of the DbContext class."
+					},
+					"startupProject": {
+						"type": "string",
+						"description": "Path to the .csproj that contains the registration of the DbContext."
+					},
+					"project": {
+						"type": "string",
+						"description": "Path to the .csproj of the project containing the Microsoft.EntityFrameworkCore.Design nuget package."
+					},
+					"migrations": {
+						"type": "object",
+						"properties": {
+							"outputDir": {
+								"type": "string"
+							}
+						}
+					},
+					"bundles": {
+						"type": "object",
+						"properties": {
+							"outputFile": {
+								"type": "string"
+							}
+						}
+					},
+					"scripts": {
+						"type": "object",
+						"properties": {
+							"outputFile": {
+								"type": "string"
+							},
+							"isIdempotent": {
+								"type": "boolean"
+							},
+							"noTransactions": {
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				"required": [
+					"name",
+					"project"
+				]
+			}
+		}
+	},
+	"required": [
+		"contexts"
+	]
+}
